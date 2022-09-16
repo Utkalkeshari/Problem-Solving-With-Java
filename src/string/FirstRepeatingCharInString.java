@@ -6,32 +6,31 @@ import java.util.List;
 public class FirstRepeatingCharInString {
 	public static void main(String[] args) {
 		char result = FirstRepeatingCharInString.findRepeatedChar("ehdiwheilf");
-		if(result =='F') {
+		if (result == 'F') {
 			System.out.println("No Repetation");
-		}else {
-			System.out.println("The repeating char is:"+ result);
+		} else {
+			System.out.println("The repeating char is:" + result);
 		}
 	}
 
 	public static char findRepeatedChar(String input) {
-		if(null != input) {
+		if (null != input) {
 			String trimmedInput = input.trim();
-			if(trimmedInput.length() != 0) {
+			if (trimmedInput.length() != 0) {
 				List<Character> charList = new ArrayList();
-				for(int i=0; i<trimmedInput.length()-1; i++) {
-					if(charList.contains(trimmedInput.charAt(i))) {
+				for (int i = 0; i < trimmedInput.length() - 1; i++) {
+					if (charList.contains(trimmedInput.charAt(i))) {
 						return trimmedInput.charAt(i);
-					}else {
-						//add unique charecters to the list
+					} else {
+						// add unique charecters to the list
 						charList.add(trimmedInput.charAt(i));
 					}
-					
-				}	
+				}
 				return 'F';
-			}else {
+			} else {
 				throw new NullPointerException("Please Provide an Input");
 			}
-		}else {
+		} else {
 			throw new NullPointerException("Please Provide an Input");
 		}
 	}
